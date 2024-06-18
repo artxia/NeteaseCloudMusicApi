@@ -1,5 +1,4 @@
 // 乐谱预览
-const crypto = require('crypto')
 module.exports = (query, request) => {
   const data = {
     id: query.id,
@@ -11,6 +10,7 @@ module.exports = (query, request) => {
     {
       crypto: 'eapi',
       cookie: query.cookie,
+      ua: query.ua || '',
       proxy: query.proxy,
       realIP: query.realIP,
       url: '/api//music/sheet/preview/info', // 我没写错! 他们就是这么请求的!

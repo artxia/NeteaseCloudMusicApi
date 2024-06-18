@@ -2,7 +2,7 @@
 
 module.exports = (query, request) => {
   const data = {
-    avatarImgId: '0',
+    // avatarImgId: '0',
     birthday: query.birthday,
     city: query.city,
     gender: query.gender,
@@ -12,11 +12,12 @@ module.exports = (query, request) => {
   }
   return request(
     'POST',
-    `https://music.163.com/weapi/user/profile/update`,
+    `https://music.163.com/api/user/profile/update`,
     data,
     {
       crypto: 'weapi',
       cookie: query.cookie,
+      ua: query.ua || '',
       proxy: query.proxy,
       realIP: query.realIP,
     },

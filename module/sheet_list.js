@@ -1,5 +1,4 @@
 // 乐谱列表
-const crypto = require('crypto')
 module.exports = (query, request) => {
   const data = {
     id: query.id,
@@ -12,6 +11,7 @@ module.exports = (query, request) => {
     {
       crypto: 'eapi',
       cookie: query.cookie,
+      ua: query.ua || '',
       proxy: query.proxy,
       realIP: query.realIP,
       url: '/api/music/sheet/list/v1',

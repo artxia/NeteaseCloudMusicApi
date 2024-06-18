@@ -12,6 +12,7 @@ module.exports = (query, request) => {
     {
       crypto: 'weapi',
       cookie: query.cookie,
+      ua: query.ua || '',
       proxy: query.proxy,
       realIP: query.realIP,
     },
@@ -23,11 +24,11 @@ module.exports = (query, request) => {
       }
     }
     if (playable) {
-      response.body = { success: true, message: 'ok' }
+      response.body = { code: 200, success: true, message: 'ok' }
       return response
     } else {
       // response.status = 404
-      response.body = { success: false, message: '亲爱的,暂无版权' }
+      response.body = { code: 200, success: false, message: '亲爱的,暂无版权' }
       return response
       // return Promise.reject(response)
     }

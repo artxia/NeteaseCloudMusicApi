@@ -1,5 +1,4 @@
 // 音乐百科基础信息
-const crypto = require('crypto')
 module.exports = (query, request) => {
   const data = {
     songId: query.id,
@@ -11,6 +10,7 @@ module.exports = (query, request) => {
     {
       crypto: 'eapi',
       cookie: query.cookie,
+      ua: query.ua || '',
       proxy: query.proxy,
       realIP: query.realIP,
       url: '/api/song/play/about/block/page',
